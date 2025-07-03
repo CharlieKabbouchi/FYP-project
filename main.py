@@ -3,12 +3,9 @@ import torch
 import sounddevice as sd
 import gradio as gr
 import os
-import shutil
-from pydub import AudioSegment
 import librosa
 import matplotlib.pyplot as plt
 import torchaudio
-import tempfile
 import soundfile as sf
 
 
