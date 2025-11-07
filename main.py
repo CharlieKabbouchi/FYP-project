@@ -71,7 +71,7 @@ def clean_silence_from_audio(input_path, output_path):
     # Detect non-silent intervals and put them in a single arr
     intervals = librosa.effects.split(y, top_db=40)
     y_trimmed = np.concatenate([y[start:end] for start, end in intervals])
-    sf.write(output_path, y_trimmed, sr, format='WAV', subtype='FLOAT')  # Add these explicit params!
+    sf.write(output_path, y_trimmed, sr, format='WAV', subtype='FLOAT')
 
 
 def print_details_of_speaker(speaker_name):
@@ -157,7 +157,7 @@ if __name__ == "__main__":
         with gr.Row():
             with gr.Column():
                 # this wav format is 16-bit
-                file_upload = gr.Audio(label="Upload/Record audio", type="filepath", format="wav") #try type="numpy"
+                file_upload = gr.Audio(label="Upload/Record audio", type="filepath", format="wav") # maybe try type="numpy"?
                 text_input_upload = gr.Textbox(label="Enter Speaker Name")
                 btn_upload = gr.Button("Upload")
                 upload_status = gr.Textbox(label="Upload Status", interactive=False)
