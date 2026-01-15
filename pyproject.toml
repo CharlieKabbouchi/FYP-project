@@ -11,6 +11,8 @@ dependencies = [
     "transformers==4.33.0",
     "sounddevice>=0.5.2",
     "gradio>=5.34.1",
+    "speechbrain==1.0.3",
+    "kokoro==0.9.4",
 ]
 
 [tool.uv.sources]
