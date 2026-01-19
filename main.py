@@ -90,7 +90,7 @@ class AudioEngine:
         if sig.shape[0] > 1: 
             sig = sig.mean(0, keepdim=True)
         
-        if s != 16000: 
+        if s != 24000: 
             sig = torchaudio.transforms.Resample(s, 24000)(sig)
             
         return F.normalize(self.spk_encoder.encode_batch(sig.to(Config.DEVICE)).squeeze(), dim=0)
